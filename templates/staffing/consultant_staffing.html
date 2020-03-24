@@ -1,8 +1,8 @@
 {% load i18n %}
 {# Fragment of page to be included in a consultant_home tab #}
 
-<div id="pydici-ajax-form-content-consultant-staffing" class="content-large">
-    <form action="{% url 'staffing:consultant_staffing' consultant.id %}" method="POST" id="pydici-ajax-form-consultant-staffing">
+<div id="AYCHSmart-ajax-form-content-consultant-staffing" class="content-large">
+    <form action="{% url 'staffing:consultant_staffing' consultant.id %}" method="POST" id="AYCHSmart-ajax-form-consultant-staffing">
         {{ formset.management_form }}
         <div class="form-row">
         <table class="table table-striped table-hover table-condensed">
@@ -75,8 +75,8 @@
 
 {% include "staffing/_staffing_fold.html" %}
 
-{% with "pydici-ajax-form-consultant-staffing" as formid %}
-{% with "pydici-ajax-form-content-consultant-staffing" as formcontent %}
+{% with "AYCHSmart-ajax-form-consultant-staffing" as formid %}
+{% with "AYCHSmart-ajax-form-content-consultant-staffing" as formcontent %}
     {% include "core/_ajax_post.html" %}
 {% endwith %}
 {% endwith %}
