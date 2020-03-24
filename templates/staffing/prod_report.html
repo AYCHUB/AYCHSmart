@@ -1,4 +1,4 @@
-{% extends "core/pydici.html" %}
+{% extends "core/AYCHSmart.html" %}
 
 {% load i18n %}
 
@@ -13,9 +13,9 @@
 
 	<h1>
     <ul class="pager" style="text-align:left">
-    	<li class="pydici-tooltip" title="{% trans 'Previous months' %}"><a href="{% url 'staffing:prod_report' year=previous_slice_date|date:'Y' month=previous_slice_date|date:'m' %}/"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
+    	<li class="AYCHSmart-tooltip" title="{% trans 'Previous months' %}"><a href="{% url 'staffing:prod_report' year=previous_slice_date|date:'Y' month=previous_slice_date|date:'m' %}/"><span class="glyphicon glyphicon-chevron-left"></span></a></li>
     	{% trans "Staff production" %}
-    	<li class="pydici-tooltip" title="{% trans 'Next months' %}" ><a href="{% url 'staffing:prod_report' year=next_slice_date|date:'Y' month=next_slice_date|date:'m' %}/"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
+    	<li class="AYCHSmart-tooltip" title="{% trans 'Next months' %}" ><a href="{% url 'staffing:prod_report' year=next_slice_date|date:'Y' month=next_slice_date|date:'m' %}/"><span class="glyphicon glyphicon-chevron-right"></span></a></li>
     </ul>
 	</h1>
 
@@ -48,7 +48,7 @@
     <div class="col-md-12">
     <div class="table-responsive">
 
-    <table class="table table-striped table-hover table-pydici-extra-condensed" id="prod_table">
+    <table class="table table-striped table-hover table-AYCHSmart-extra-condensed" id="prod_table">
 
     <tr>
         <th></th>
@@ -72,7 +72,7 @@
                 <td style="text-align:left">{% trans "Total" %}</td>
             {% endif %}
             {% for status, tooltip, charge in charges %}
-                <td style="background-color:{{ status }}; border-left:1px solid #C3C3C3;"><span class="pydici-tooltip" title="{{ tooltip }}">{{ charge|join:"</span></td><td>" }}</td>
+                <td style="background-color:{{ status }}; border-left:1px solid #C3C3C3;"><span class="AYCHSmart-tooltip" title="{{ tooltip }}">{{ charge|join:"</span></td><td>" }}</td>
             {% endfor %}
         </tr>
     {% endfor %}
