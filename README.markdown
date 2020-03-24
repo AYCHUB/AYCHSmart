@@ -15,8 +15,7 @@ http://www.gnu.org/licenses/agpl-3.0.html
 
 # AUTHOR(S)
 
-Jean Wallet (Creditbox@protonmail.com)
-Sébastien Renard (Sebastien.Renard@digitalfox.org).
+Jean Wallet (core@aych.site)
 
 
 # INSTALLATION
