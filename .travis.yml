@@ -19,4 +19,4 @@ services:
 
 notifications:
   email: 
-    - sebastien.renard@digitalfox.org
+    - core@aych.site
