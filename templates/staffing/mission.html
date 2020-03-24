@@ -1,8 +1,8 @@
-{% extends "core/pydici.html" %}
+{% extends "core/AYCHSmart.html" %}
 
 {% load i18n %}
 {% load l10n %}
-{% load pydici_filters %}
+{% load AYCHSmart_filters %}
 
 {% block extrajs %}
 <script type="text/javascript" src="{{ MEDIA_URL }}js/jquery.jeditable.mini.js"></script>
@@ -127,12 +127,12 @@
                 <div class="col-md-6">
                     {% if mission.lead.administrative_notes %}
                         <h2>{% trans "Administrative notes" %}</h2>
-                        <div class='well'>{{ mission.lead.administrative_notes|pydici_simple_format }}</div>
+                        <div class='well'>{{ mission.lead.administrative_notes|AYCHSmart_simple_format }}</div>
                     {% endif %}
                 </div>
             </div>
             {% if mission.lead.description %}
-                    <div class='well'>{{ mission.lead.description|urlize|pydici_simple_format|linebreaksbr }}</div>
+                    <div class='well'>{{ mission.lead.description|urlize|AYCHSmart_simple_format|linebreaksbr }}</div>
             {% endif %}
     </div>
 
