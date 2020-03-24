@@ -7,12 +7,12 @@
 <div class="row">
 
     <div class="col-lg-8 col-md-12 col-sm-6 col-xs-12">
-        <div class="pydici-block">
-        <h3 class="pydici-block-title">{% trans "This month" %}</h3>
+        <div class="AYCHSmart-block">
+        <h3 class="AYCHSmart-block-title">{% trans "This month" %}</h3>
             <ul class="icon-list arrow-right">
                 <li>{% trans "My turnover this month: " %} <b>{{ month_turnover|floatformat:-2 }} €</b>
-                ({% if turnover_variation > 0 %}<img src="{{ MEDIA_URL }}pydici/increase.png" border=0 title="{% trans 'Increase' %}" />
-                 {% else %}<img src="{{ MEDIA_URL }}pydici/decrease.png" border=0 title="{% trans 'Decrease' %}" />{% endif %}
+                ({% if turnover_variation > 0 %}<img src="{{ MEDIA_URL }}AYCHSmart/increase.png" border=0 title="{% trans 'Increase' %}" />
+                 {% else %}<img src="{{ MEDIA_URL }}AYCHSmart/decrease.png" border=0 title="{% trans 'Decrease' %}" />{% endif %}
                 {{ turnover_variation|floatformat:-2 }}%)</li>
             </ul>
             <div class="col-md-2 col-sm-6 col-xs-6">
@@ -34,8 +34,8 @@
 
     {% if tasks %}
     <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="pydici-block">
-            <h3 class="pydici-block-title">{% trans "Things to do right now !" %}</h3>
+        <div class="AYCHSmart-block">
+            <h3 class="AYCHSmart-block-title">{% trans "Things to do right now !" %}</h3>
             <ul class="icon-list checkmark">
             {% for name, count, link, priority in tasks %}
                 <li class="task_priority_{{priority}}"><a href="{{ link }}">{{ name }} {% if count > 1 %}(x{{ count }}){% endif %}</a></li>
@@ -46,14 +46,14 @@
     {% endif %}
 
     <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="pydici-block">
+        <div class="AYCHSmart-block">
             {% if consultant.manager %}
                 {% ifnotequal consultant.manager consultant %}
-                    <h3 class="pydici-block-title">{% trans "Manager: " %} {% with consultant=consultant.manager %}{% include "people/__consultant_name.html" %}{% endwith %}</h3>
+                    <h3 class="AYCHSmart-block-title">{% trans "Manager: " %} {% with consultant=consultant.manager %}{% include "people/__consultant_name.html" %}{% endwith %}</h3>
                 {% endifnotequal %}
             {% endif %}
             {% if staff %}
-                <h3 class="pydici-block-title">{% trans "Staff" %}</h3>
+                <h3 class="AYCHSmart-block-title">{% trans "Staff" %}</h3>
                 <ul class="row icon-list chevron-right">
                 {% for people in staff %}
                     <li class="col-sm-6">{% with consultant=people %}{% include "people/__consultant_name.html" %}{% endwith %}</li>
@@ -65,8 +65,8 @@
 
     {% if staled_missions %}
     <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="pydici-block">
-                <h3 class="pydici-block-title">{% trans "Staled missions (to be updated or archived)" %}</h3>
+        <div class="AYCHSmart-block">
+                <h3 class="AYCHSmart-block-title">{% trans "Staled missions (to be updated or archived)" %}</h3>
                 <ul class="row icon-list chevron-right">
                 {% for mission in staled_missions %}
                     <li><a href="{% url 'staffing:mission_home' mission.id %}">{{ mission }}</a></li>
@@ -80,8 +80,8 @@
     {% with consultant.pending_actions|slice:":20" as actions %}
         {% if actions %}
             <div class="col-md-4 col-sm-6 col-xs-12">
-                <div class="pydici-block" id="consultant_actions">
-                    <h3 class="pydici-block-title">{% trans "Pending actions" %}</h3>
+                <div class="AYCHSmart-block" id="consultant_actions">
+                    <h3 class="AYCHSmart-block-title">{% trans "Pending actions" %}</h3>
                         {% include "actionset/_consultant_actions.html" %}
                 </div>
             </div>
@@ -91,8 +91,8 @@
 {% if business_territory %}
 
     <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="pydici-block">
-            <h3 class="pydici-block-title">{% trans "Business territory" %}</h3>
+        <div class="AYCHSmart-block">
+            <h3 class="AYCHSmart-block-title">{% trans "Business territory" %}</h3>
             <ul class="row icon-list chevron-right">
             {% for company in business_territory %}
                 {% if forloop.counter > 12 %}
@@ -103,7 +103,7 @@
                     </div>
                 {% endif %}
                 {% if forloop.last and forloop.counter > 12 %}
-                    <div class="pydici-more-less" data-toggle="collapse" aria-expanded="false" data-target=".collapse-business-territory" aria-controls="collapse-business-territory">
+                    <div class="AYCHSmart-more-less" data-toggle="collapse" aria-expanded="false" data-target=".collapse-business-territory" aria-controls="collapse-business-territory">
                         <span class="glyphicon glyphicon-collapse-down"></span>
                         <span class="glyphicon glyphicon-collapse-up"></span>
                     </div>
@@ -116,8 +116,8 @@
 {% endif %}
     
     <div class="col-md-4 col-sm-6 col-xs-12">
-        <div class="pydici-block">
-            <h3 class="pydici-block-title">{% trans "Current missions" %}</h3>
+        <div class="AYCHSmart-block">
+            <h3 class="AYCHSmart-block-title">{% trans "Current missions" %}</h3>
             <ul class="row icon-list chevron-right">
             {% for mission in missions %}
                 <li><a href="{% url 'staffing:mission_home' mission.id %}">{{ mission }}</a></li>
@@ -128,8 +128,8 @@
 
     {% if leads_as_responsible %}
         <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="pydici-block">
-                    <h3 class="pydici-block-title">{% trans "Current leads as responsible" %}</h3>
+            <div class="AYCHSmart-block">
+                    <h3 class="AYCHSmart-block-title">{% trans "Current leads as responsible" %}</h3>
                     <ul class="row icon-list chevron-right">
                     {% for lead in leads_as_responsible %}
                         <li><a href="{% url 'leads:detail' lead.id %}", title='{{ lead.description }}'>{{ lead }}</a></li>
@@ -141,8 +141,8 @@
 
     {% if leads_as_staffee %}
         <div class="col-md-4 col-sm-6 col-xs-12">
-            <div class="pydici-block">
-                    <h3 class="pydici-block-title">{% trans "Current leads as resource" %}</h3>
+            <div class="AYCHSmart-block">
+                    <h3 class="AYCHSmart-block-title">{% trans "Current leads as resource" %}</h3>
                     <ul class="icon-list chevron-right">
                     {% for lead in leads_as_staffee %}
                         <li><a href="{% url 'leads:detail' lead.id %}", title='{{ lead.description }}'>{{ lead }}</a></li>
