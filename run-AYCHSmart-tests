@@ -1,7 +1,7 @@
 #!/usr/bin/env python
 # -*- coding: UTF-8 -*-
 """
-Runs tests of all Pydici applications
+Runs tests of all AYCHSmart applications
 @author: Aurélien Gâteau (mail@agateau.com)
 @license: AGPL v3 or newer (http://www.gnu.org/licenses/agpl-3.0.html)
 """
@@ -9,7 +9,7 @@ Runs tests of all Pydici applications
 import os
 import sys
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'pydici.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'AYCHSmart.settings')
 
 from django.conf import settings
 from django.core.management import execute_from_command_line
