@@ -10,7 +10,7 @@ It is written in Python using the Django framework.
 
 # LICENSE
 
-Aych.Crmbstaff is available under the GNU Affero Public License v3 or newer (AGPL 3+).
+AYCHSmart is available under the GNU Affero Public License v3 or newer (AGPL 3+).
 http://www.gnu.org/licenses/agpl-3.0.html
 
 # AUTHOR(S)
